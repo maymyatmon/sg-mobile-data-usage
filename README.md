@@ -1,6 +1,7 @@
 # sg-mobile-data-usage
 
-I'm still learning and new to Kotlin since all of my pass android projects are with java. 
+I'm still learning and new to Kotlin since all of my past android projects are with Java. 
+
 
 #DateSource
 https://data.gov.sg/api/action/datastore_search?resource_id=a807b7ab-6cad-4aa6-87d0-e283a7353a0f&limit=30
