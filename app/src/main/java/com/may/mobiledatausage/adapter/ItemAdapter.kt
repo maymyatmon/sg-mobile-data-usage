@@ -1,6 +1,5 @@
 package com.may.mobiledatausage.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,8 @@ import com.may.mobiledatausage.R
 import com.may.mobiledatausage.model.YearlyRecord
 
 class ItemAdapter(
-    private var dataSet: List<YearlyRecord>
+    private var dataSet: List<YearlyRecord>,
+    private val itemClickListener: ItemClickListener
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
@@ -28,11 +28,21 @@ class ItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item = dataSet[position]
-        holder.tvYear.text = item.year
-        holder.tvVolume.text = "Total Volume: ${item.volume}"
+        val record = dataSet[position]
+        holder.tvYear.text = record.year
+        holder.tvVolume.text = "Total Volume: ${record.volume}"
+
+        holder.itemView.setOnClickListener {
+            itemClickListener.onItemClick(record)
+        }
     }
 
 
     override fun getItemCount() = dataSet.size
+
+
+}
+
+interface ItemClickListener {
+    fun onItemClick(record: YearlyRecord)
 }

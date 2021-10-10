@@ -6,4 +6,4 @@
     android:name="com.may.mobiledatausage.view.YearlyRecordFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:layout="@layout/yearly_record_fragment" />
+    tools:layout="@layout/fragment_yearly_record" />
